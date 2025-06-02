@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afeto Consultoria - Seguro Viagem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --azul-escuro: #004d40; /* Um tom de azul escuro que remete ao verde da logo */
+            --laranja: #FF8C00; /* Laranja vibrante para CTAs e destaques */
+            --laranja-claro: #FFAC42;
+            --cinza-claro: #f9f9f9;
+            --cinza-medio: #666;
+            --branco: #fff;
+            --preto: #333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--preto);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: var(--branco);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .logo {
+            height: 50px; /* Ajuste conforme o tamanho do seu logo */
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2)); /* Adiciona uma pequena sombra ao logo */
+        }
+        .header .cta-button {
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+        }
+        .header .cta-button:hover {
+            background-color: var(--laranja-claro);
+        }
+
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); /* Imagem de viagem com overlay */
+            background-size: cover;
+            background-position: center;
+            color: var(--branco);
+            text-align: center;
+            padding: 150px 5% 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 80vh; /* Ocupa boa parte da tela */
+            position: relative;
+            z-index: 1; /* Garante que o conteúdo fique acima do overlay */
+        }
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-section p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+        .hero-section .cta-button {
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        .hero-section .cta-button:hover {
+            background-color: var(--laranja-claro);
+        }
+
+        .benefits-section {
+            padding: 80px 5%;
+            background-color: var(--cinza-claro);
+            text-align: center;
+        }
+        .benefits-section h2 {
+            font-size: 2.5em;
+            color: var(--azul-escuro);
+            margin-bottom: 60px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .benefit-card {
+            background-color: var(--branco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        .benefit-card i { /* Ícones Font Awesome */
+            font-size: 3.5em;
+            color: var(--laranja);
+            margin-bottom: 15px;
+        }
+        .benefit-card h3 {
+            font-size: 1.4em;
+            color: var(--preto);
+            margin-bottom: 10px;
+        }
+        .benefit-card p {
+            font-size: 1em;
+            color: var(--cinza-medio);
+        }
+
+        .faq-section {
+            padding: 80px 5%;
+            background-color: var(--branco);
+            text-align: center;
+        }
+        .faq-section h2 {
+            font-size: 2.5em;
+            color: var(--azul-escuro);
+            margin-bottom: 60px;
+        }
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .faq-item:last-child { /* Remove a borda do último item */
+            border-bottom: none;
+        }
+        .faq-item h3 {
+            font-size: 1.5em;
+            color: var(--preto);
+            margin-bottom: 10px;
+        }
+        .faq-item p {
+            font-size: 1.1em;
+            color: var(--cinza-medio);
+            line-height: 1.6;
+        }
+
+        .final-cta-section {
+            padding: 80px 5%;
+            background-color: var(--azul-escuro); /* Cor de fundo azul escuro */
+            color: var(--branco);
+            text-align: center;
+        }
+        .final-cta-section h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .final-cta-section p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .final-cta-section .cta-button {
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.5em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+        .final-cta-section .cta-button:hover {
+            background-color: var(--laranja-claro);
+        }
+
+        .footer {
+            background-color: var(--preto); /* Fundo preto para o rodapé */
+            color: var(--branco);
+            padding: 40px 5%;
+            text-align: center;
+        }
+        .footer .logo {
+            height: 60px; /* Ajuste conforme o tamanho do seu logo */
+            margin-bottom: 20px;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+        }
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .footer .social-links a {
+            color: var(--branco);
+            margin: 0 10px;
+            font-size: 1.8em; /* Aumenta o tamanho dos ícones */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer .social-links a:hover {
+            color: var(--laranja);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 10px 5%;
+            }
+            .header .logo {
+                margin-bottom: 10px;
+            }
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section p {
+                font-size: 1.2em;
+            }
+            .benefits-section h2, .faq-section h2, .final-cta-section h2 {
+                font-size: 2em;
+            }
+            .final-cta-section p {
+                font-size: 1.2em;
+            }
+            .final-cta-section .cta-button {
+                font-size: 1.2em;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 2em;
+            }
+            .hero-section p {
+                font-size: 1em;
+            }
+            .header .cta-button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="https://afetoconsultoria.com.br/wp-content/uploads/2019/06/afeto-consultoria.png" alt="Logo Afeto Consultoria" class="logo">
+        <a href="https://wa.me/+551127832020" class="cta-button">Fale com um especialista</a>
+    </header>
+
+    <section class="hero-section">
+        <h1>Viajar é viver<br>Com seguro, é viver tranquilo!</h1>
+        <p>Seguro Viagem com até 40% de desconto!<br>Mais proteção, mais aventura e zero dor de cabeça 🧳✈️</p>
+        <p>Promoção por tempo limitado. Vai perder?</p>
+        <a href="http://www.porto.vc/VIAGEM_Q44B7J_03afac31cae2405cbd0b4ae5cab6c81a" class="cta-button">🧡 GARANTA AGORA SEU SEGURO COM DESCONTO</a>
+    </section>
+
+    <section class="benefits-section">
+        <h2>Tudo que você precisa, onde quer que esteja 🌍</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-kit-medical"></i> <h3>Atendimento médico internacional 24h</h3>
+                <p>(inclusive para COVID-19)</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-suitcase-rolling"></i> <h3>Cobertura para bagagem extraviada ou voo atrasado</h3>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-person-skiing"></i> <h3>Cobertura para esportes de lazer</h3>
+                <p>(sim, até aquela trilha radical tá coberta!)</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-dog"></i> <h3>Desconto para hospedagem do pet com a DogHero</h3>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-wifi"></i> <h3>20% off em internet internacional (eSIM)</h3>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-car-side"></i> <h3>10% off no aluguel de carros</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>Ainda em dúvida? A gente responde! 🤔</h2>
+        <div class="faq-item">
+            <h3>“Preciso mesmo de seguro viagem?”</h3>
+            <p>Sim! Além de ser obrigatório em vários países, ele evita prejuízos com médicos, voos perdidos ou bagagens extraviadas. É proteção por um valor acessível — e com ele, você viaja tranquilo. ✈️✅</p>
+        </div>
+        <div class="faq-item">
+            <h3>“É só para viagens internacionais?”</h3>
+            <p>Nada disso! O seguro também vale para viagens dentro do Brasil. Imprevistos acontecem em qualquer lugar — e com ele, você está coberto da praia ao interior. 🌴🚌</p>
+        </div>
+        <div class="faq-item">
+            <h3>"Mas meu cartão já oferece seguro viagem..."</h3>
+            <p>Os seguros de cartão são cheios de regras e cobrem o básico. Com o seguro certo, você viaja com suporte completo e sem surpresas. ✅✈️</p>
+        </div>
+        <div class="faq-item">
+            <h3>“E se eu não usar?”</h3>
+            <p>Melhor voltar sem usar do que precisar e se arrepender. Com ele, você evita dores de cabeça e gastos desnecessários. 😉</p>
+        </div>
+    </section>
+
+    <section class="final-cta-section">
+        <h2>Tá esperando o quê? A próxima aventura te chama! 🌍✈️</h2>
+        <p>Promoção válida por tempo limitado.<br>Não embarque sem o seu seguro!</p>
+        <a href="http://www.porto.vc/VIAGEM_Q44B7J_03afac31cae2405cbd0b4ae5cab6c81a" class="cta-button">🔒 QUERO COMPRAR MEU SEGURO COM DESCONTO</a>
+    </section>
+
+    <footer class="footer">
+        <img src="https://afetoconsultoria.com.br/wp-content/uploads/2019/06/afeto-consultoria.png" alt="Logo Afeto Consultoria" class="logo">
+        <p>E-mail: comercial@afetoconsultoria.com.br</p>
+        <p>WhatsApp: (11) 2783-2020</p>
+        <p>Aviso: Corretor autorizado.</p>
+        <div class="social-links">
+            <a href="https://afetoconsultoria.com.br/" target="_blank" aria-label="Site Afeto Consultoria"><i class="fas fa-globe"></i></a>
+            <a href="https://www.instagram.com/afeto_consultoria/" target="_blank" aria-label="Instagram Afeto Consultoria"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+551127832020" target="_blank" aria-label="WhatsApp Afeto Consultoria"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
