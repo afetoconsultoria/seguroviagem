@@ -1,2 +1,2 @@
 # seguroviagem
-Seguro Viagem - 40% de desconto
+Seguro Viagem - 30% de desconto
