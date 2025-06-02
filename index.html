@@ -55,7 +55,7 @@
         }
 
         .hero-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); /* Imagem de viagem com overlay */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/32379752/pexels-photo-32379752/free-photo-of-vista-deslumbrante-do-lago-thun-e-dos-alpes-suicos.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Nova imagem de fundo */
             background-size: cover;
             background-position: center;
             color: var(--branco);
@@ -76,11 +76,24 @@
         }
         .hero-section p {
             font-size: 1.5em;
-            margin-bottom: 30px;
+            margin-bottom: 15px; /* Ajustado para dar espaço ao cupom */
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+        .hero-section .coupon-code {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--laranja); /* Cor do cupom */
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 30px; /* Espaço para o botão */
+            text-shadow: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .hero-section .cta-button {
             background-color: var(--laranja);
@@ -243,6 +256,9 @@
             .hero-section p {
                 font-size: 1.2em;
             }
+            .hero-section .coupon-code {
+                font-size: 1.5em;
+            }
             .benefits-section h2, .faq-section h2, .final-cta-section h2 {
                 font-size: 2em;
             }
@@ -261,6 +277,10 @@
             }
             .hero-section p {
                 font-size: 1em;
+            }
+            .hero-section .coupon-code {
+                font-size: 1.2em;
+                padding: 8px 15px;
             }
             .header .cta-button {
                 padding: 8px 15px;
@@ -282,7 +302,9 @@
 
     <section class="hero-section">
         <h1>Viajar é viver<br>Com seguro, é viver tranquilo!</h1>
-        <p>Seguro Viagem com até 40% de desconto!<br>Mais proteção, mais aventura e zero dor de cabeça 🧳✈️</p>
+        <p>Seguro Viagem com até **30% de desconto!**</p>
+        <p>Use o cupom: <span class="coupon-code">VIAGEM30</span></p>
+        <p>Mais proteção, mais aventura e zero dor de cabeça 🧳✈️</p>
         <p>Promoção por tempo limitado. Vai perder?</p>
         <a href="http://www.porto.vc/VIAGEM_Q44B7J_03afac31cae2405cbd0b4ae5cab6c81a" class="cta-button">🧡 GARANTA AGORA SEU SEGURO COM DESCONTO</a>
     </section>
